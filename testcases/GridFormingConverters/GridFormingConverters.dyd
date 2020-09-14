@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    Copyright (c) 2015-2019, RTE (http://www.rte-france.com)
+    See AUTHORS.txt
+    All rights reserved.
+    This Source Code Form is subject to the terms of the Mozilla Public
+    License, v. 2.0. If a copy of the MPL was not distributed with this
+    file, you can obtain one at http://mozilla.org/MPL/2.0/.
+    SPDX-License-Identifier: MPL-2.0
+
+    This file is part of Dynawo, an hybrid C++/Modelica open source time domain
+    simulation tool for power systems.
+-->
+<dyn:dynamicModelsArchitecture xmlns:dyn="http://www.rte-france.com/dynawo">
+  <dyn:blackBoxModel id="Converter250" lib="GridFormingConverterDroopControl" parFile="./GridFormingConverters.par" parId="1"/>
+  <dyn:blackBoxModel id="Converter500" lib="GridFormingConverterDispatchableVirtualOscillatorControl" parFile="./GridFormingConverters.par" parId="2"/>
+  <dyn:blackBoxModel id="Converter1000" lib="GridFormingConverterMatchingControl" parFile="./GridFormingConverters.par" parId="3"/>
+  <dyn:blackBoxModel id="Line12" lib="Line" parFile="./GridFormingConverters.par" parId="4"/>
+  <dyn:blackBoxModel id="Line23bis1" lib="Line" parFile="./GridFormingConverters.par" parId="5"/>
+  <dyn:blackBoxModel id="Line23bis2" lib="Line" parFile="./GridFormingConverters.par" parId="5"/>
+  <dyn:blackBoxModel id="Line23" lib="Line" parFile="./GridFormingConverters.par" parId="6"/>
+  <dyn:blackBoxModel id="Line13" lib="Line" parFile="./GridFormingConverters.par" parId="7"/>
+  <dyn:blackBoxModel id="Load" lib="LoadAlphaBeta" parFile="./GridFormingConverters.par" parId="8"/>
+  <dyn:blackBoxModel id="Fault" lib="NodeFault" parFile="./GridFormingConverters.par" parId="9"/>
+  <dyn:blackBoxModel id="Disconnect" lib="EventSetPointBoolean" parFile="./GridFormingConverters.par" parId="10"/>
+  <dyn:connect id1="Converter250" var1="control_omegaRefPu" id2="Converter1000" var2="control_omegaPu"/>
+  <dyn:connect id1="Converter500" var1="control_omegaRefPu" id2="Converter1000" var2="control_omegaPu"/>
+  <dyn:connect id1="Converter1000" var1="control_omegaRefPu" id2="Converter500" var2="control_omegaRefPu"/>
+  <dyn:connect id1="Converter1000" var1="converter_terminal" id2="Line12" var2="line_terminal1"/>
+  <dyn:connect id1="Converter1000" var1="converter_terminal" id2="Line13" var2="line_terminal1"/>
+  <dyn:connect id1="Converter250" var1="converter_terminal" id2="Line23" var2="line_terminal1"/>
+  <dyn:connect id1="Converter250" var1="converter_terminal" id2="Line23bis1" var2="line_terminal1"/>
+  <dyn:connect id1="Converter250" var1="converter_terminal" id2="Line12" var2="line_terminal2"/>
+  <dyn:connect id1="Converter500" var1="converter_terminal" id2="Line23" var2="line_terminal2"/>
+  <dyn:connect id1="Converter500" var1="converter_terminal" id2="Line23bis2" var2="line_terminal2"/>
+  <dyn:connect id1="Converter500" var1="converter_terminal" id2="Line13" var2="line_terminal2"/>
+  <dyn:connect id1="Line23bis1" var1="line_terminal2" id2="Line23bis2" var2="line_terminal1"/>
+  <dyn:connect id1="Load" var1="load_terminal" id2="Line23" var2="line_terminal1"/>
+  <dyn:connect id1="Fault" var1="fault_terminal" id2="Line23bis1" var2="line_terminal2"/>
+  <dyn:connect id1="Disconnect" var1="event_state1" id2="Line12" var2="line_switchOffSignal2"/>
+</dyn:dynamicModelsArchitecture>
