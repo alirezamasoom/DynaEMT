@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>NodeFault</name>
+  <elements>
+    <parameters>
+      <parameter name="fault_RPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="fault_XPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="fault_ZPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="fault_ZPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="fault_tBegin" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="fault_tEnd" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="fault_nodeFault_value" valueType="BOOL"/>
+      <variable name="fault_terminal_V_im" valueType="DOUBLE"/>
+      <variable name="fault_terminal_V_re" valueType="DOUBLE"/>
+      <variable name="fault_terminal_i_im" valueType="DOUBLE"/>
+      <variable name="fault_terminal_i_re" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>VariationArea</name>
+  <elements>
+    <parameters>
+      <parameter name="deltaP" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="deltaQ" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="nbLoads" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="startTime" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="stopTime" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="state" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

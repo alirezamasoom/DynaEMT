@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>SetPoint</name>
+  <elements>
+    <parameters>
+      <parameter name="setPoint_Value0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="setPoint_setPoint_value" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

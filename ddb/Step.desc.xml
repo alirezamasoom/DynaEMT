@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>Step</name>
+  <elements>
+    <parameters>
+      <parameter name="step_Height" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="step_Value0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="step_tStep" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="step_step_value" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

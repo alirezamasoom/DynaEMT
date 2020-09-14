@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>LoadPQ</name>
+  <elements>
+    <parameters>
+      <parameter name="load_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="load_P0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_Q0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="load_U0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_UPhase0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_i0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_i0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_s0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_s0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_u0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_u0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="load_PPu" valueType="DOUBLE"/>
+      <variable name="load_PRefPu_value" valueType="DOUBLE"/>
+      <variable name="load_QPu" valueType="DOUBLE"/>
+      <variable name="load_QRefPu_value" valueType="DOUBLE"/>
+      <variable name="load_SPu_im" valueType="DOUBLE"/>
+      <variable name="load_SPu_re" valueType="DOUBLE"/>
+      <variable name="load_UPu_value" valueType="DOUBLE"/>
+      <variable name="load_running_value" valueType="BOOL"/>
+      <variable name="load_state" valueType="INT"/>
+      <variable name="load_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="load_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="load_terminal_V_im" valueType="DOUBLE"/>
+      <variable name="load_terminal_V_re" valueType="DOUBLE"/>
+      <variable name="load_terminal_i_im" valueType="DOUBLE"/>
+      <variable name="load_terminal_i_re" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

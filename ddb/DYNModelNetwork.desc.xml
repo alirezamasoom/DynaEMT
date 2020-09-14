@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>NETWORK</name>
+  <elements>
+    <parameters>
+      <parameter name="bus_uMax" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="bus_uMin" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="capacitor_no_reclosing_delay" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="dangling_line_currentLimit_maxTimeOperation" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="line_currentLimit_maxTimeOperation" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="line_isDynamic" valueType="BOOL" cardinality="1" readOnly="false"/>
+      <parameter name="load_Tp" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_Tq" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_alpha" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_alphaLong" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_beta" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_betaLong" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_isControllable" valueType="BOOL" cardinality="1" readOnly="false"/>
+      <parameter name="load_isRestorative" valueType="BOOL" cardinality="1" readOnly="false"/>
+      <parameter name="load_zPMax" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_zQMax" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="reactance_no_reclosing_delay" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_currentLimit_maxTimeOperation" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_t1st_HT" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_t1st_THT" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_tNext_HT" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_tNext_THT" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_tolV" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="@ID@_ACPIN_V_im" valueType="DOUBLE"/>
+      <variable name="@ID@_ACPIN_V_re" valueType="DOUBLE"/>
+      <variable name="@ID@_ACPIN_i_im" valueType="DOUBLE"/>
+      <variable name="@ID@_ACPIN_i_re" valueType="DOUBLE"/>
+      <variable name="@ID@_DeltaPc_value" valueType="DOUBLE"/>
+      <variable name="@ID@_DeltaQc_value" valueType="DOUBLE"/>
+      <variable name="@ID@_GENERATOR_state_value" valueType="DOUBLE"/>
+      <variable name="@ID@_P1_value" valueType="DOUBLE"/>
+      <variable name="@ID@_P2_value" valueType="DOUBLE"/>
+      <variable name="@ID@_PWPIN_ii" valueType="DOUBLE"/>
+      <variable name="@ID@_PWPIN_ir" valueType="DOUBLE"/>
+      <variable name="@ID@_PWPIN_vi" valueType="DOUBLE"/>
+      <variable name="@ID@_PWPIN_vr" valueType="DOUBLE"/>
+      <variable name="@ID@_P_value" valueType="DOUBLE"/>
+      <variable name="@ID@_Pc_value" valueType="DOUBLE"/>
+      <variable name="@ID@_Q1_value" valueType="DOUBLE"/>
+      <variable name="@ID@_Q2_value" valueType="DOUBLE"/>
+      <variable name="@ID@_Q_value" valueType="DOUBLE"/>
+      <variable name="@ID@_Qc_value" valueType="DOUBLE"/>
+      <variable name="@ID@_TAP_CHANGER_locked_value" valueType="BOOL"/>
+      <variable name="@ID@_U1_value" valueType="DOUBLE"/>
+      <variable name="@ID@_U2_value" valueType="DOUBLE"/>
+      <variable name="@ID@_U_value" valueType="DOUBLE"/>
+      <variable name="@ID@_Upu_value" valueType="DOUBLE"/>
+      <variable name="@ID@_bSvc_value" valueType="DOUBLE"/>
+      <variable name="@ID@_bus_vi" valueType="DOUBLE"/>
+      <variable name="@ID@_bus_vr" valueType="DOUBLE"/>
+      <variable name="@ID@_currentSection_value" valueType="DOUBLE"/>
+      <variable name="@ID@_desactivate_currentLimits_value" valueType="BOOL"/>
+      <variable name="@ID@_disable_internal_tapChanger_value" valueType="BOOL"/>
+      <variable name="@ID@_feedBack_value" valueType="DOUBLE"/>
+      <variable name="@ID@_genState_value" valueType="DOUBLE"/>
+      <variable name="@ID@_i1_value" valueType="DOUBLE"/>
+      <variable name="@ID@_i2_value" valueType="DOUBLE"/>
+      <variable name="@ID@_iBranch_im" valueType="DOUBLE"/>
+      <variable name="@ID@_iBranch_re" valueType="DOUBLE"/>
+      <variable name="@ID@_iS1ToS2Side1_value" valueType="DOUBLE"/>
+      <variable name="@ID@_iS1ToS2Side2_value" valueType="DOUBLE"/>
+      <variable name="@ID@_iS2ToS1Side1_value" valueType="DOUBLE"/>
+      <variable name="@ID@_iS2ToS1Side2_value" valueType="DOUBLE"/>
+      <variable name="@ID@_iSide1_value" valueType="DOUBLE"/>
+      <variable name="@ID@_iSide2_value" valueType="DOUBLE"/>
+      <variable name="@ID@_i_value" valueType="DOUBLE"/>
+      <variable name="@ID@_iisw" valueType="DOUBLE"/>
+      <variable name="@ID@_irsw" valueType="DOUBLE"/>
+      <variable name="@ID@_isAvailable_value" valueType="DOUBLE"/>
+      <variable name="@ID@_isCapacitor_value" valueType="DOUBLE"/>
+      <variable name="@ID@_lineState_value" valueType="DOUBLE"/>
+      <variable name="@ID@_loadState_value" valueType="DOUBLE"/>
+      <variable name="@ID@_mode_value" valueType="DOUBLE"/>
+      <variable name="@ID@_numcc_value" valueType="DOUBLE"/>
+      <variable name="@ID@_omegaRef_value" valueType="DOUBLE"/>
+      <variable name="@ID@_phi_value" valueType="DOUBLE"/>
+      <variable name="@ID@_phipu_value" valueType="DOUBLE"/>
+      <variable name="@ID@_piIn_value" valueType="DOUBLE"/>
+      <variable name="@ID@_piOut_value" valueType="DOUBLE"/>
+      <variable name="@ID@_state1_value" valueType="DOUBLE"/>
+      <variable name="@ID@_state2_value" valueType="DOUBLE"/>
+      <variable name="@ID@_state_value" valueType="DOUBLE"/>
+      <variable name="@ID@_step_value" valueType="DOUBLE"/>
+      <variable name="@ID@_swState_value" valueType="DOUBLE"/>
+      <variable name="@ID@_switchOff_value" valueType="BOOL"/>
+      <variable name="@ID@_twtState_value" valueType="DOUBLE"/>
+      <variable name="@ID@_zP_value" valueType="DOUBLE"/>
+      <variable name="@ID@_zQ_value" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

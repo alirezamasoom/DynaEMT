@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>TransformerFixedRatio</name>
+  <elements>
+    <parameters>
+      <parameter name="transformer_BPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_GPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="transformer_RPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="transformer_XPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_YPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_YPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_ZPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_ZPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_rTfoPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="transformer_running_value" valueType="BOOL"/>
+      <variable name="transformer_state" valueType="INT"/>
+      <variable name="transformer_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="transformer_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="transformer_terminal1_V_im" valueType="DOUBLE"/>
+      <variable name="transformer_terminal1_V_re" valueType="DOUBLE"/>
+      <variable name="transformer_terminal1_i_im" valueType="DOUBLE"/>
+      <variable name="transformer_terminal1_i_re" valueType="DOUBLE"/>
+      <variable name="transformer_terminal2_V_im" valueType="DOUBLE"/>
+      <variable name="transformer_terminal2_V_re" valueType="DOUBLE"/>
+      <variable name="transformer_terminal2_i_im" valueType="DOUBLE"/>
+      <variable name="transformer_terminal2_i_re" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

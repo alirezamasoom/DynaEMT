@@ -1,0 +1,89 @@
+within OpenEMTP.Electrical.Machines;
+model Synchronous "Synchronous machine PU model"
+  import PI=Modelica.Constants.pi;
+//Synchronous machine default parameters
+  parameter Real S(unit = "MVA", start = 1000)    "Nominal power";
+  parameter Real V(unit = "kV RMSLL", start = 20) "Nominal Voltage";
+  parameter Real Ra(unit = "PU", start = 0.0)    "Armature resistance";
+  parameter Real Xl(unit = "PU", start = 0.28)   "Leakage reactance";
+  parameter Real Xd(unit = "PU", start = 2.9)   "d-axis synchronous reactance";
+  parameter Real Xq(unit = "PU", start = 2.8)   "q-axis synchronous reactance";
+  parameter Integer P( start=4)                  "Pole number";
+  parameter Modelica.SIunits.Frequency f(start = 60) "Nominal frequency";
+  parameter Modelica.SIunits.Current i_fn=2200 "Field current for 1 pu armature voltage";
+//Electrical data as open circuit test
+  parameter Real Xpd(unit = "PU", start = 0.57)   "d-axis synchronous transient reactance";
+  parameter Real Xpq(unit = "PU", start = 0.911)  "q-axis synchronous transient reactance";
+  parameter Modelica.SIunits.Time Tpd0( start = 6.7) "d Open-circuit transient time constant";
+  parameter Modelica.SIunits.Time Tpq0( start = 0.41) "q Open-circuit transient time constant";
+
+//Mechanical data parameters
+  parameter Real H(unit = "PU", start = 0.3) "Inertia constant";
+  parameter Real D(unit = "PU", start = 0.3) "Damping coefficient";
+
+// Stator Base Values
+ final parameter Real Vsb=1000*V*sqrt(2/3);
+ final parameter Real Isb=1000*S*sqrt(2/3)/V;
+ final parameter Real Zsb=V^2/S "Base impedance";     
+ final parameter Real Omegasb=2*PI*f"";
+ final parameter Real Lsb=Zsb/Omegasb;
+//Field Base Values
+ final parameter Real Ifb= i_fn*Lmd ;
+ final parameter Real Vfb= S*1e6/Ifb;
+ final parameter Real Zfb= Vfb/Ifb;            
+ final parameter Real Lfb= Zfb/Omegasb; 
+//Standard  Parameters in PU
+ final parameter Real Xmd=Xd-Xl , Xmq=Xq-Xl, Lmd=Xmd/Omegasb, Lmq=Xmq/Omegasb ; 
+ final parameter Real Tpd = Tpd0 * Xpd / Xd ; 
+ final parameter Real Temp1 = Tpd0 * (Xmd - Xd) / Xmd + Tpd * Xd / Xmd;
+
+                      
+                                         
+//Actual Parameters
+ final parameter Real Ra_act=Ra*Zsb;
+ final parameter Real Xl_act=Xl*Zsb;
+ final parameter Real Xd_act=Xd*Zsb;
+ final parameter Real Xq_act=Xq*Zsb;
+ parameter Real Rf=0.3510692536E-01,
+                Xf=0.8867449367E+02,
+                Xaf=0.9090909091E+01,
+                RQ1=0.6546455256E+00,
+                XQ1=0.1011861750E+03,
+                XaQ1=0.8743927828E+01,
+                X0=0.1120000000E+00;
+
+ parameter Real L[5,5]=(1/Omegasb)*
+                       [Xd_act, 0    ,0     ,0     ,0   ;
+                        0     ,Xq_act,0     ,0     ,0   ;
+                        0     ,0     ,X0    ,0     ,0   ;
+                        Xaf   ,0     ,0     ,Xf    ,0   ;
+                        0     ,XaQ1  ,0     ,0     ,XQ1 ];   
+                       
+                        
+//Variables
+ Modelica.SIunits.Angle  theta_e; 
+ Real  v_dq0[5],i_dq0[5],i_abc[5],Pshi[5];
+ Real v_abc[5];
+ Real Tmec, Tele;
+ Real T[5,5];
+ 
+ 
+equation
+v_abc={100*cos(377*time), 100*cos(377*time-2*PI/3), 100*cos(377*time+2*PI/3),50,0};
+
+T=sqrt(2/3)*[cos(theta_e), cos(theta_e-2*PI/3), cos(theta_e+2*PI/3) , 0        , 0         ;
+             sin(theta_e), sin(theta_e-2*PI/3), sin(theta_e+2*PI/3) , 0        , 0         ;
+             sqrt(1/2)   , sqrt(1/2)          , sqrt(1/2)           , 0        , 0         ;
+             0           , 0                  , 0                   , sqrt(3/2), 0         ;
+             0           , 0                  , 0                   , 0        , sqrt(3/2) ];
+v_dq0=T*v_abc;
+
+v_dq0=-diagonal({Ra_act,Ra_act,Ra_act,Rf,RQ1})*i_dq0-der(Pshi)+{-Omegasb*Pshi[2],Omegasb*Pshi[1],0,0,0};
+Pshi=L*i_dq0;
+Tele=Pshi[1]*i_dq0[2]-Pshi[2]*i_dq0[1];
+i_abc=Modelica.Math.Matrices.inv(T)*i_dq0;
+
+
+annotation(defaultComponentName = "SM",
+    Icon(graphics = {Ellipse(origin = {-10, 16}, lineColor = {0, 0, 255}, extent = {{-90, -90}, {64, 62}}, endAngle = 360), Text(origin = {-25, 3}, extent = {{-47, 43}, {47, -43}}, textString = "SM")}));
+end Synchronous;

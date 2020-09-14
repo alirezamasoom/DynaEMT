@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>UnderVoltageAutomaton</name>
+  <elements>
+    <parameters>
+      <parameter name="underVoltageAutomaton_UMinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="underVoltageAutomaton_tLagAction" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="underVoltageAutomaton_UMonitoredPu" valueType="DOUBLE"/>
+      <variable name="underVoltageAutomaton_switchOffSignal_value" valueType="BOOL"/>
+      <variable name="underVoltageAutomaton_tThresholdReached" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

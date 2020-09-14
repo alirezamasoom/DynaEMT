@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>HvdcPVEmulation</name>
+  <elements>
+    <parameters>
+      <parameter name="acemulation_KACEmulation" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="acemulation_PRef0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="acemulation_PRefSetPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="acemulation_PSetPu_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="acemulation_Theta10" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="acemulation_Theta20" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="acemulation_add_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="acemulation_add_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="acemulation_firstOrder1_T" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="acemulation_firstOrder1_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="acemulation_firstOrder1_k" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="acemulation_firstOrder1_y_start" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="acemulation_firstOrder_T" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="acemulation_firstOrder_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="acemulation_firstOrder_k" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="acemulation_firstOrder_y_start" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="acemulation_gain_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="acemulation_tFilter" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_KLosses" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="hvdc_P10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_P20Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q1MaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q1MinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q20Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q2MaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q2MinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="hvdc_U10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_U20Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_UPhase10" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_UPhase20" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_i10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_i10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_i20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_i20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_s10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_s10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_s20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_s20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_u10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_u10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_u20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_u20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="acemulation_PRefPu" valueType="DOUBLE"/>
+      <variable name="acemulation_PSetPu_y" valueType="DOUBLE"/>
+      <variable name="acemulation_Theta1" valueType="DOUBLE"/>
+      <variable name="acemulation_Theta2" valueType="DOUBLE"/>
+      <variable name="acemulation_add_u1" valueType="DOUBLE"/>
+      <variable name="acemulation_add_u2" valueType="DOUBLE"/>
+      <variable name="acemulation_add_y" valueType="DOUBLE"/>
+      <variable name="acemulation_feedback_u1" valueType="DOUBLE"/>
+      <variable name="acemulation_feedback_u2" valueType="DOUBLE"/>
+      <variable name="acemulation_feedback_y" valueType="DOUBLE"/>
+      <variable name="acemulation_firstOrder1_u" valueType="DOUBLE"/>
+      <variable name="acemulation_firstOrder1_y" valueType="DOUBLE"/>
+      <variable name="acemulation_firstOrder_u" valueType="DOUBLE"/>
+      <variable name="acemulation_firstOrder_y" valueType="DOUBLE"/>
+      <variable name="acemulation_gain_u" valueType="DOUBLE"/>
+      <variable name="acemulation_gain_y" valueType="DOUBLE"/>
+      <variable name="hvdc_P1Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_P1RefPu" valueType="DOUBLE"/>
+      <variable name="hvdc_P2Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_Q1Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_Q2Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_Theta1" valueType="DOUBLE"/>
+      <variable name="hvdc_Theta2" valueType="DOUBLE"/>
+      <variable name="hvdc_U1Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_U1RefPu_value" valueType="DOUBLE"/>
+      <variable name="hvdc_U2Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_U2RefPu_value" valueType="DOUBLE"/>
+      <variable name="hvdc_running_value" valueType="BOOL"/>
+      <variable name="hvdc_s1Pu_im" valueType="DOUBLE"/>
+      <variable name="hvdc_s1Pu_re" valueType="DOUBLE"/>
+      <variable name="hvdc_s2Pu_im" valueType="DOUBLE"/>
+      <variable name="hvdc_s2Pu_re" valueType="DOUBLE"/>
+      <variable name="hvdc_state" valueType="INT"/>
+      <variable name="hvdc_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="hvdc_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="hvdc_terminal1_V_im" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal1_V_re" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal1_i_im" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal1_i_re" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal2_V_im" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal2_V_re" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal2_i_im" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal2_i_re" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

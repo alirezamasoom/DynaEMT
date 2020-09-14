@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>StaticVarCompensator</name>
+  <elements>
+    <parameters>
+      <parameter name="SVarC_B0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_BMaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_BMinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_BShuntPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_BVar0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_G0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_GPuCst_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_IMaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_IMinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_KCurrentLimiter" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_Kp" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_Lambda" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_Mode0" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_P0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_PuConversion_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_Q0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_SNom" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_Ti" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_U0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_UBlock" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_UBlockPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_UNom" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_UPhase0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_URef0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_URefDown" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_URefUp" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_UThresholdDown" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_UThresholdDownPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_UThresholdUp" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_UThresholdUpPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_UUnblockDown" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_UUnblockDownPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_UUnblockUp" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_UUnblockUpPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_calculBG_BShuntPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_i0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_i0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_B0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_G0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="SVarC_injector_P0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_Q0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_SNom" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="SVarC_injector_U0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_i0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_i0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_s0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_s0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_u0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_injector_u0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_Mode0" valueType="INT" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UBlock" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UBlockPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UNom" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_URef0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_URefDown" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_URefUp" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UThresholdDown" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UThresholdDownPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UThresholdUp" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UThresholdUpPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UUnblockDown" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UUnblockDownPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UUnblockUp" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_UUnblockUpPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_tThresholdDown" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_modeHandling_tThresholdUp" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_BMaxPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_BMinPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_BVar0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_IMaxPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_IMinPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_KCurrentLimiter" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_Kp" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_Lambda" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_SNom" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_Ti" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_add1_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="SVarC_regulation_add1_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="-1"/>
+      <parameter name="SVarC_regulation_add2_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="SVarC_regulation_add2_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="SVarC_regulation_add3_k1" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_add3_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="SVarC_regulation_add4_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="SVarC_regulation_add4_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="SVarC_regulation_integrator_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="SVarC_regulation_integrator_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_integrator_use_reset" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="SVarC_regulation_integrator_use_set" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="SVarC_regulation_integrator_y_start" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_lambda_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_BMaxPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_BMinPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_IMaxPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_IMinPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_KCurrentLimiter" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_add1_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="SVarC_regulation_limitations_add1_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="-1"/>
+      <parameter name="SVarC_regulation_limitations_add2_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="-1"/>
+      <parameter name="SVarC_regulation_limitations_add2_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="SVarC_regulation_limitations_bMaxPu_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_bMinPu_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_iMaxPu_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_iMinPu_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMax_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMax_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMax_limitsAtInit" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMax_outMax" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMax_outMin" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="0"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMax_strict" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMax_use_reset" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMax_use_set" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMax_y_start" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMin_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMin_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMin_limitsAtInit" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMin_outMax" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="0"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMin_outMin" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMin_strict" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMin_use_reset" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMin_use_set" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="SVarC_regulation_limitations_limIntegratorMin_y_start" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_regulation_variableLimiter_homotopyType" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="SVarC_regulation_variableLimiter_limitsAtInit" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="SVarC_regulation_variableLimiter_strict" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="SVarC_regulation_variableLimiter_ySimplified" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="0"/>
+      <parameter name="SVarC_regulation_zero_k" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="0"/>
+      <parameter name="SVarC_s0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_s0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_selectModeAuto0" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="SVarC_setModeManual0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="SVarC_tThresholdDown" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_tThresholdUp" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="SVarC_u0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="SVarC_u0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="URef_Value0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="URef_ValueIn" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="SVarC_GPuCst_y" valueType="DOUBLE"/>
+      <variable name="SVarC_PuConversion_u" valueType="DOUBLE"/>
+      <variable name="SVarC_PuConversion_y" valueType="DOUBLE"/>
+      <variable name="SVarC_URef" valueType="DOUBLE"/>
+      <variable name="SVarC_calculBG_BPu" valueType="DOUBLE"/>
+      <variable name="SVarC_calculBG_BVarPu" valueType="DOUBLE"/>
+      <variable name="SVarC_calculBG_GCstPu" valueType="DOUBLE"/>
+      <variable name="SVarC_calculBG_GPu" valueType="DOUBLE"/>
+      <variable name="SVarC_calculBG_mode_value" valueType="INT"/>
+      <variable name="SVarC_division1_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_division1_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_division1_y" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_BPu" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_BPuSnRef" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_GPu" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_GPuSnRef" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_PInjPu" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_QInjPu" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_UPu" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_YPuSnRef_im" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_YPuSnRef_re" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_running_value" valueType="BOOL"/>
+      <variable name="SVarC_injector_state" valueType="INT"/>
+      <variable name="SVarC_injector_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="SVarC_injector_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="SVarC_injector_switchOffSignal3_value" valueType="BOOL"/>
+      <variable name="SVarC_injector_terminal_V_im" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_terminal_V_re" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_terminal_i_im" valueType="DOUBLE"/>
+      <variable name="SVarC_injector_terminal_i_re" valueType="DOUBLE"/>
+      <variable name="SVarC_modeHandling_UPu" valueType="DOUBLE"/>
+      <variable name="SVarC_modeHandling_URef" valueType="DOUBLE"/>
+      <variable name="SVarC_modeHandling_URefAuto" valueType="DOUBLE"/>
+      <variable name="SVarC_modeHandling_URefPu" valueType="DOUBLE"/>
+      <variable name="SVarC_modeHandling_blocked" valueType="BOOL"/>
+      <variable name="SVarC_modeHandling_modeAuto_value" valueType="INT"/>
+      <variable name="SVarC_modeHandling_modeManual_value" valueType="INT"/>
+      <variable name="SVarC_modeHandling_mode_value" valueType="INT"/>
+      <variable name="SVarC_modeHandling_selectModeAuto" valueType="BOOL"/>
+      <variable name="SVarC_modeHandling_setModeManual" valueType="INT"/>
+      <variable name="SVarC_modeHandling_timerModeChangeDown" valueType="DOUBLE"/>
+      <variable name="SVarC_modeHandling_timerModeChangeUp" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_BVarPu" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_IPu" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_QPu" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_UPu" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_URefPu" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add1_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add1_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add1_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add2_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add2_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add2_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add3_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add3_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add3_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add4_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add4_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_add4_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_blocked" valueType="BOOL"/>
+      <variable name="SVarC_regulation_feedback1_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_feedback1_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_feedback1_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_integrator_local_reset" valueType="BOOL"/>
+      <variable name="SVarC_regulation_integrator_local_set" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_integrator_u" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_integrator_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_lambda_u" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_lambda_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_BVarMaxPu" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_BVarMinPu" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_IPu" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_add1_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_add1_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_add1_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_add2_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_add2_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_add2_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_bMaxPu_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_bMinPu_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_iMaxPu_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_iMinPu_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_limIntegratorMax_local_reset" valueType="BOOL"/>
+      <variable name="SVarC_regulation_limitations_limIntegratorMax_local_set" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_limIntegratorMax_u" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_limIntegratorMax_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_limIntegratorMin_local_reset" valueType="BOOL"/>
+      <variable name="SVarC_regulation_limitations_limIntegratorMin_local_set" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_limIntegratorMin_u" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_limIntegratorMin_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_max1_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_max1_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_max1_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_max_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_max_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_max_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_min1_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_min1_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_min1_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_min_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_min_u2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_limitations_min_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_switch_u1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_switch_u2" valueType="BOOL"/>
+      <variable name="SVarC_regulation_switch_u3" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_switch_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_variableLimiter_limit1" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_variableLimiter_limit2" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_variableLimiter_simplifiedExpr" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_variableLimiter_u" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_variableLimiter_y" valueType="DOUBLE"/>
+      <variable name="SVarC_regulation_zero_y" valueType="DOUBLE"/>
+      <variable name="SVarC_selectModeAuto" valueType="BOOL"/>
+      <variable name="SVarC_setModeManual" valueType="INT"/>
+      <variable name="SVarC_terminal_V_im" valueType="DOUBLE"/>
+      <variable name="SVarC_terminal_V_re" valueType="DOUBLE"/>
+      <variable name="SVarC_terminal_i_im" valueType="DOUBLE"/>
+      <variable name="SVarC_terminal_i_re" valueType="DOUBLE"/>
+      <variable name="URef_setPoint_value" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

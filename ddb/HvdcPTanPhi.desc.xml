@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>HvdcPTanPhi</name>
+  <elements>
+    <parameters>
+      <parameter name="hvdc_KLosses" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="hvdc_P10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_P20Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q1MaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q1MinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q20Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q2MaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_Q2MinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="hvdc_U10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_U20Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_UPhase10" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_UPhase20" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="hvdc_i10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_i10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_i20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_i20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_s10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_s10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_s20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_s20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_u10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_u10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_u20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="hvdc_u20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="hvdc_P1Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_P1RefPu" valueType="DOUBLE"/>
+      <variable name="hvdc_P2Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_Q1Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_Q1RawPu" valueType="DOUBLE"/>
+      <variable name="hvdc_Q2Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_Q2RawPu" valueType="DOUBLE"/>
+      <variable name="hvdc_U1Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_U2Pu" valueType="DOUBLE"/>
+      <variable name="hvdc_running_value" valueType="BOOL"/>
+      <variable name="hvdc_s1Pu_im" valueType="DOUBLE"/>
+      <variable name="hvdc_s1Pu_re" valueType="DOUBLE"/>
+      <variable name="hvdc_s2Pu_im" valueType="DOUBLE"/>
+      <variable name="hvdc_s2Pu_re" valueType="DOUBLE"/>
+      <variable name="hvdc_state" valueType="INT"/>
+      <variable name="hvdc_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="hvdc_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="hvdc_tanPhi1Ref_value" valueType="DOUBLE"/>
+      <variable name="hvdc_tanPhi2Ref_value" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal1_V_im" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal1_V_re" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal1_i_im" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal1_i_re" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal2_V_im" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal2_V_re" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal2_i_im" valueType="DOUBLE"/>
+      <variable name="hvdc_terminal2_i_re" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>GeneratorFictitious</name>
+  <elements>
+    <parameters>
+      <parameter name="generator_Alpha" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_Beta" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="generator_P0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_PGen0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Q0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_QGen0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="generator_U0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_UPhase0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_i0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_i0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_u0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_u0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="generator_PGenPu" valueType="DOUBLE"/>
+      <variable name="generator_QGenPu" valueType="DOUBLE"/>
+      <variable name="generator_SGenPu_im" valueType="DOUBLE"/>
+      <variable name="generator_SGenPu_re" valueType="DOUBLE"/>
+      <variable name="generator_UPu" valueType="DOUBLE"/>
+      <variable name="generator_running_value" valueType="BOOL"/>
+      <variable name="generator_state" valueType="INT"/>
+      <variable name="generator_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="generator_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="generator_switchOffSignal3_value" valueType="BOOL"/>
+      <variable name="generator_terminal_V_im" valueType="DOUBLE"/>
+      <variable name="generator_terminal_V_re" valueType="DOUBLE"/>
+      <variable name="generator_terminal_i_im" valueType="DOUBLE"/>
+      <variable name="generator_terminal_i_re" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

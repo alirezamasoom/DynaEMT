@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>PhaseShifterP</name>
+  <elements>
+    <parameters>
+      <parameter name="phaseShifter_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="phaseShifter_P0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_PDeadBand" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_PTarget" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_deadBand" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="phaseShifter_decreaseTapToDecreaseValue" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="phaseShifter_decreaseTapToIncreaseValue" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="phaseShifter_increasePhase" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_increaseTapToDecreaseValue" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="phaseShifter_increaseTapToIncreaseValue" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="phaseShifter_locked0" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="phaseShifter_regulating0" valueType="BOOL" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_running0" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="phaseShifter_sign" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_state0" valueType="INT" cardinality="1" readOnly="true"/>
+      <parameter name="phaseShifter_t1st" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_tNext" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_tap0" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_tapMax" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_tapMin" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="phaseShifter_targetValue" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="phaseShifter_valueMax" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="phaseShifter_valueMin" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="phaseShifter_valueToMonitor0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="phaseShifter_AutomatonExists_value" valueType="BOOL"/>
+      <variable name="phaseShifter_PMonitored_value" valueType="DOUBLE"/>
+      <variable name="phaseShifter_locked" valueType="BOOL"/>
+      <variable name="phaseShifter_lookingToDecreaseTap" valueType="BOOL"/>
+      <variable name="phaseShifter_lookingToIncreaseTap" valueType="BOOL"/>
+      <variable name="phaseShifter_running_value" valueType="BOOL"/>
+      <variable name="phaseShifter_state" valueType="INT"/>
+      <variable name="phaseShifter_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="phaseShifter_tTapDown" valueType="DOUBLE"/>
+      <variable name="phaseShifter_tTapUp" valueType="DOUBLE"/>
+      <variable name="phaseShifter_tValueAboveMaxWhileRunning" valueType="DOUBLE"/>
+      <variable name="phaseShifter_tValueUnderMinWhileRunning" valueType="DOUBLE"/>
+      <variable name="phaseShifter_tap_value" valueType="DOUBLE"/>
+      <variable name="phaseShifter_valueAboveMax" valueType="BOOL"/>
+      <variable name="phaseShifter_valueToMonitor_value" valueType="DOUBLE"/>
+      <variable name="phaseShifter_valueUnderMin" valueType="BOOL"/>
+    </variables>
+  </elements>
+</model>

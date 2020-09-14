@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>alphaSum</name>
+  <elements>
+    <parameters>
+      <parameter name="nbGen" valueType="INT" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="alphaSum_0_value" valueType="DOUBLE"/>
+      <variable name="n_0_value" valueType="DOUBLE"/>
+      <variable name="tetaRef_0_value" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

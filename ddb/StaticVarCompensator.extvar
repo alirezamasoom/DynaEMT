@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<external_variables xmlns="http://www.rte-france.com/dynawo">
+  <variable id="SVarC.injector.switchOffSignal1.value" type="discrete" defaultValue="false"/>
+  <variable id="SVarC.injector.switchOffSignal2.value" type="discrete" defaultValue="false"/>
+  <variable id="SVarC.injector.switchOffSignal3.value" type="discrete" defaultValue="false"/>
+  <variable id="SVarC.selectModeAuto" type="discrete" defaultValue="true"/>
+  <variable id="SVarC.setModeManual" type="discrete"/>
+  <variable id="SVarC.terminal.V.im" type="continuous"/>
+  <variable id="SVarC.terminal.V.re" type="continuous"/>
+</external_variables>

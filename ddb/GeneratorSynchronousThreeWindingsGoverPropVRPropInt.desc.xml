@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>GeneratorSynchronousThreeWindingsGoverPropVRPropInt</name>
+  <elements>
+    <parameters>
+      <parameter name="Pm_Value0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="Pm_ValueIn" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="URef_Value0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="URef_ValueIn" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_Ce0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Cm0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Cos2Eta0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_DPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_Efd0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_ExcitationPu" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="generator_H" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_IRotor0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_IStator0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Id0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_If0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Iq0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Kuf" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LDPPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LQ1PPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LQ2PPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LambdaAD0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LambdaAQ0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LambdaAirGap0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LambdaD0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LambdaQ10Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LambdaQ20Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Lambdad0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Lambdaf0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Lambdaq0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LdPPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LfPPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_LqPPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_MdPPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_MdPPuEfd" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_MdPuEfd" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_MdSat0PPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Mds0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Mi0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_MqPPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_MqSat0PPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Mqs0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_MrcPPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_MsalPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="generator_P0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_PGen0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_PNomAlt" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_PNomTurb" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_Pm0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Q0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_QGen0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_QNomAlt" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_QStator0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_QStator0PuQNom" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_RDPPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_RQ1PPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_RQ2PPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_RTfPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_RTfoPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_RaPPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_RaPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_RfPPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_SNom" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_Sin2Eta0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_SnTfo" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="generator_Theta0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_ThetaInternal0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Tpd0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_Tppd0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_Tppq0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_U0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_UBaseHV" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_UBaseLV" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_UNom" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_UNomHV" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_UNomLV" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_UPhase0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_UStator0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Ud0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Uf0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_Uq0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_XTfPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_XTfoPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_XdPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_XlPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_XpdPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_XppdPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_XppqPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_XqPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_i0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_i0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_iStator0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_iStator0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_md" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_mq" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_nd" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_nq" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="generator_rTfoPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_s0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_s0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_sStator0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_sStator0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_u0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_u0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_uStator0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="generator_uStator0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="governor_ActiveFrequencyRegulation" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="governor_KGover" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="governor_PMax" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="governor_PMaxPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="governor_PMin" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="governor_PMinPu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="governor_PNom" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="governor_Pm0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="governor_PmCst_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="governor_PmRawPu_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="governor_PmRawPu_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="governor_activeFrequencyRegulation_k" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="governor_gain_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="governor_limiter_homotopyType" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="governor_limiter_limitsAtInit" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="governor_limiter_strict" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="governor_limiter_uMax" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="governor_limiter_uMin" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="governor_omegaRefPu_k" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="voltageRegulator_Efd0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_EfdMaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="voltageRegulator_EfdMinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="voltageRegulator_Gain" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="voltageRegulator_LagEfdMax" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="voltageRegulator_LagEfdMin" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="voltageRegulator_Us0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_UsRef0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_UsRefMaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="voltageRegulator_UsRefMinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="voltageRegulator_gain_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_integratorEntry_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="voltageRegulator_integratorEntry_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="voltageRegulator_integrator_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="voltageRegulator_integrator_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_integrator_use_reset" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="voltageRegulator_integrator_use_set" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="voltageRegulator_integrator_y_start" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_limUsRef_homotopyType" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="voltageRegulator_limUsRef_limitsAtInit" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="voltageRegulator_limUsRef_strict" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="voltageRegulator_limUsRef_uMax" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_limUsRef_uMin" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_limiterWithLag_LagMax" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_limiterWithLag_LagMin" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_limiterWithLag_UMax" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_limiterWithLag_UMin" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_limiterWithLag_tUMaxReached0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_limiterWithLag_tUMinReached0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_limiterWithLag_u0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_limiterWithLag_y0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="voltageRegulator_rawEfd_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="voltageRegulator_rawEfd_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="voltageRegulator_tIntegral" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="voltageRegulator_yIntegrator0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="Pm_setPoint_value" valueType="DOUBLE"/>
+      <variable name="URef_setPoint_value" valueType="DOUBLE"/>
+      <variable name="generator_IRotorPu_value" valueType="DOUBLE"/>
+      <variable name="generator_IStatorPu_value" valueType="DOUBLE"/>
+      <variable name="generator_MdSatPPu" valueType="DOUBLE"/>
+      <variable name="generator_MqSatPPu" valueType="DOUBLE"/>
+      <variable name="generator_PGen" valueType="DOUBLE"/>
+      <variable name="generator_PGenPu" valueType="DOUBLE"/>
+      <variable name="generator_PePu" valueType="DOUBLE"/>
+      <variable name="generator_PmPu_value" valueType="DOUBLE"/>
+      <variable name="generator_QGen" valueType="DOUBLE"/>
+      <variable name="generator_QGenPu" valueType="DOUBLE"/>
+      <variable name="generator_QStatorPuQNom_value" valueType="DOUBLE"/>
+      <variable name="generator_QStatorPu_value" valueType="DOUBLE"/>
+      <variable name="generator_UPu" valueType="DOUBLE"/>
+      <variable name="generator_UStatorPu_value" valueType="DOUBLE"/>
+      <variable name="generator_cePu" valueType="DOUBLE"/>
+      <variable name="generator_cmPu" valueType="DOUBLE"/>
+      <variable name="generator_cos2Eta" valueType="DOUBLE"/>
+      <variable name="generator_efdPu_value" valueType="DOUBLE"/>
+      <variable name="generator_iDPu" valueType="DOUBLE"/>
+      <variable name="generator_iQ1Pu" valueType="DOUBLE"/>
+      <variable name="generator_iQ2Pu" valueType="DOUBLE"/>
+      <variable name="generator_iStatorPu_im" valueType="DOUBLE"/>
+      <variable name="generator_iStatorPu_re" valueType="DOUBLE"/>
+      <variable name="generator_idPu" valueType="DOUBLE"/>
+      <variable name="generator_ifPu" valueType="DOUBLE"/>
+      <variable name="generator_iqPu" valueType="DOUBLE"/>
+      <variable name="generator_lambdaADPu" valueType="DOUBLE"/>
+      <variable name="generator_lambdaAQPu" valueType="DOUBLE"/>
+      <variable name="generator_lambdaAirGapPu" valueType="DOUBLE"/>
+      <variable name="generator_lambdaDPu" valueType="DOUBLE"/>
+      <variable name="generator_lambdaQ1Pu" valueType="DOUBLE"/>
+      <variable name="generator_lambdaQ2Pu" valueType="DOUBLE"/>
+      <variable name="generator_lambdadPu" valueType="DOUBLE"/>
+      <variable name="generator_lambdafPu" valueType="DOUBLE"/>
+      <variable name="generator_lambdaqPu" valueType="DOUBLE"/>
+      <variable name="generator_mdsPu" valueType="DOUBLE"/>
+      <variable name="generator_miPu" valueType="DOUBLE"/>
+      <variable name="generator_mqsPu" valueType="DOUBLE"/>
+      <variable name="generator_omegaPu_value" valueType="DOUBLE"/>
+      <variable name="generator_omegaRefPu_value" valueType="DOUBLE"/>
+      <variable name="generator_running_value" valueType="BOOL"/>
+      <variable name="generator_sStatorPu_im" valueType="DOUBLE"/>
+      <variable name="generator_sStatorPu_re" valueType="DOUBLE"/>
+      <variable name="generator_sin2Eta" valueType="DOUBLE"/>
+      <variable name="generator_state" valueType="INT"/>
+      <variable name="generator_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="generator_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="generator_switchOffSignal3_value" valueType="BOOL"/>
+      <variable name="generator_terminal_V_im" valueType="DOUBLE"/>
+      <variable name="generator_terminal_V_re" valueType="DOUBLE"/>
+      <variable name="generator_terminal_i_im" valueType="DOUBLE"/>
+      <variable name="generator_terminal_i_re" valueType="DOUBLE"/>
+      <variable name="generator_theta" valueType="DOUBLE"/>
+      <variable name="generator_thetaInternal_value" valueType="DOUBLE"/>
+      <variable name="generator_uStatorPu_im" valueType="DOUBLE"/>
+      <variable name="generator_uStatorPu_re" valueType="DOUBLE"/>
+      <variable name="generator_udPu" valueType="DOUBLE"/>
+      <variable name="generator_ufPu" valueType="DOUBLE"/>
+      <variable name="generator_uqPu" valueType="DOUBLE"/>
+      <variable name="governor_PmCst_y" valueType="DOUBLE"/>
+      <variable name="governor_PmPu_value" valueType="DOUBLE"/>
+      <variable name="governor_PmRawPu_u1" valueType="DOUBLE"/>
+      <variable name="governor_PmRawPu_u2" valueType="DOUBLE"/>
+      <variable name="governor_PmRawPu_y" valueType="DOUBLE"/>
+      <variable name="governor_PmRefPu_value" valueType="DOUBLE"/>
+      <variable name="governor_activeFrequencyRegulation_y" valueType="BOOL"/>
+      <variable name="governor_feedback_u1" valueType="DOUBLE"/>
+      <variable name="governor_feedback_u2" valueType="DOUBLE"/>
+      <variable name="governor_feedback_y" valueType="DOUBLE"/>
+      <variable name="governor_gain_u" valueType="DOUBLE"/>
+      <variable name="governor_gain_y" valueType="DOUBLE"/>
+      <variable name="governor_limiter_simplifiedExpr" valueType="DOUBLE"/>
+      <variable name="governor_limiter_u" valueType="DOUBLE"/>
+      <variable name="governor_limiter_y" valueType="DOUBLE"/>
+      <variable name="governor_omegaPu_value" valueType="DOUBLE"/>
+      <variable name="governor_omegaRefPu_y" valueType="DOUBLE"/>
+      <variable name="governor_state" valueType="INT"/>
+      <variable name="governor_switch_u1" valueType="DOUBLE"/>
+      <variable name="governor_switch_u2" valueType="BOOL"/>
+      <variable name="governor_switch_u3" valueType="DOUBLE"/>
+      <variable name="governor_switch_y" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_EfdPu" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_EfdPuPin_value" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_UsPu" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_UsRefPu" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_feedbackNonWindUp_u1" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_feedbackNonWindUp_u2" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_feedbackNonWindUp_y" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_feedback_u1" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_feedback_u2" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_feedback_y" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_gain_u" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_gain_y" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_integratorEntry_u1" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_integratorEntry_u2" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_integratorEntry_y" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_integrator_local_reset" valueType="BOOL"/>
+      <variable name="voltageRegulator_integrator_local_set" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_integrator_u" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_integrator_y" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_limUsRef_simplifiedExpr" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_limUsRef_u" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_limUsRef_y" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_limitationDown_value" valueType="BOOL"/>
+      <variable name="voltageRegulator_limitationEfdMax" valueType="BOOL"/>
+      <variable name="voltageRegulator_limitationEfdMin" valueType="BOOL"/>
+      <variable name="voltageRegulator_limitationUp_value" valueType="BOOL"/>
+      <variable name="voltageRegulator_limitationUsRefMax" valueType="BOOL"/>
+      <variable name="voltageRegulator_limitationUsRefMin" valueType="BOOL"/>
+      <variable name="voltageRegulator_limiterWithLag_initSaturatedMax" valueType="BOOL"/>
+      <variable name="voltageRegulator_limiterWithLag_initSaturatedMin" valueType="BOOL"/>
+      <variable name="voltageRegulator_limiterWithLag_tUMaxReached" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_limiterWithLag_tUMinReached" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_limiterWithLag_u" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_limiterWithLag_y" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_rawEfd_u1" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_rawEfd_u2" valueType="DOUBLE"/>
+      <variable name="voltageRegulator_rawEfd_y" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2015-2019, RTE (http://www.rte-france.com)
+    See AUTHORS.txt
+    All rights reserved.
+    This Source Code Form is subject to the terms of the Mozilla Public
+    License, v. 2.0. If a copy of the MPL was not distributed with this
+    file, you can obtain one at http://mozilla.org/MPL/2.0/.
+    SPDX-License-Identifier: MPL-2.0
+
+    This file is part of Dynawo, an hybrid C++/Modelica open source time domain
+    simulation tool for power systems.
+-->
+<parametersSet xmlns="http://www.rte-france.com/dynawo">
+  <set id="1">
+    <par type="DOUBLE" name="RLC_R" value="10"/>
+    <par type="DOUBLE" name="RLC_L" value="0.15"/>
+    <par type="DOUBLE" name="RLC_C" value="5e-6"/>
+
+  </set>
+  <set id="3">
+    <par type="DOUBLE" name="Source_Vm" value="230"/>
+    <par type="DOUBLE" name="Source_f" value="60"/>
+    <par type="DOUBLE" name="Source_Phase" value="0"/>
+    <par type="DOUBLE" name="Source_StartTime" value="0"/>
+    <par type="DOUBLE" name="Source_StopTime" value="1"/>
+  </set>
+</parametersSet>

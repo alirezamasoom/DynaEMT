@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>TapChangerAutomaton</name>
+  <elements>
+    <parameters>
+      <parameter name="tapChanger_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="tapChanger_U0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_UDeadBand" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_UTarget" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_deadBand" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_decreaseTapToDecreaseValue" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_decreaseTapToIncreaseValue" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_increaseTapToDecreaseValue" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_increaseTapToIncreaseValue" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="tapChanger_locked0" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_regulating0" valueType="BOOL" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_running0" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="tapChanger_state0" valueType="INT" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_t1st" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_tNext" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_tap0" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_tapMax" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_tapMin" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_targetValue" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_valueMax" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_valueMin" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_valueToMonitor0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="tapChanger_AutomatonExists_value" valueType="BOOL"/>
+      <variable name="tapChanger_UMonitored_value" valueType="DOUBLE"/>
+      <variable name="tapChanger_locked" valueType="BOOL"/>
+      <variable name="tapChanger_lookingToDecreaseTap" valueType="BOOL"/>
+      <variable name="tapChanger_lookingToIncreaseTap" valueType="BOOL"/>
+      <variable name="tapChanger_running_value" valueType="BOOL"/>
+      <variable name="tapChanger_state" valueType="INT"/>
+      <variable name="tapChanger_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="tapChanger_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="tapChanger_tTapDown" valueType="DOUBLE"/>
+      <variable name="tapChanger_tTapUp" valueType="DOUBLE"/>
+      <variable name="tapChanger_tValueAboveMaxWhileRunning" valueType="DOUBLE"/>
+      <variable name="tapChanger_tValueUnderMinWhileRunning" valueType="DOUBLE"/>
+      <variable name="tapChanger_tap_value" valueType="DOUBLE"/>
+      <variable name="tapChanger_valueAboveMax" valueType="BOOL"/>
+      <variable name="tapChanger_valueToMonitor_value" valueType="DOUBLE"/>
+      <variable name="tapChanger_valueUnderMin" valueType="BOOL"/>
+    </variables>
+  </elements>
+</model>

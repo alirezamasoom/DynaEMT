@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<external_variables xmlns="http://www.rte-france.com/dynawo">
+  <variable id="phaseShifter.PMonitored.value" type="continuous"/>
+  <variable id="phaseShifter.locked" type="discrete" defaultValue="false"/>
+  <variable id="phaseShifter.switchOffSignal1.value" type="discrete" defaultValue="false"/>
+</external_variables>

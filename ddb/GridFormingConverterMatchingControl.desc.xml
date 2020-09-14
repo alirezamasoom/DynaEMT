@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>GridFormingConverterMatchingControl</name>
+  <elements>
+    <parameters>
+      <parameter name="IdcSourceRefPu_Value0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="IdcSourceRefPu_ValueIn" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="UFilterRefPu_Value0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="UFilterRefPu_ValueIn" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="UdcSourceRefPu_Value0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="UdcSourceRefPu_ValueIn" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_Cfilter" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_IdConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_IdPcc0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_IdcSource0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_IdcSourceRef0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_IqConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_IqPcc0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_KMatching" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_Kic" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_Kiv" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_KpVI" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_Kpc" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_Kpdc" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_Kpv" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_Lfilter" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_Rfilter" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_Theta0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_UdConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_UdFilter0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_UdcSource0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_UqConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_XRratio" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="control_currentLoop_GainLfd_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_GainLfq_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_IdConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_IqConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_Kic" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_Kpc" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_Lfilter" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_Rfilter" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_UdConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_UdFilter0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_UqConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_addd1_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_currentLoop_addd1_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_currentLoop_addd2_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_currentLoop_addd2_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_currentLoop_addq1_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_currentLoop_addq1_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_currentLoop_addq2_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_currentLoop_addq2_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_currentLoop_feedbackLwd_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_currentLoop_feedbackLwd_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_currentLoop_gaind_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_gainq_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_integratord_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="control_currentLoop_integratord_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_integratord_use_reset" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="control_currentLoop_integratord_use_set" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="control_currentLoop_integratord_y_start" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_integratorq_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="control_currentLoop_integratorq_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_currentLoop_integratorq_use_reset" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="control_currentLoop_integratorq_use_set" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="control_currentLoop_integratorq_y_start" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_dCVoltageControl_IdcSource0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_dCVoltageControl_IdcSourceRef0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_dCVoltageControl_Kpdc" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_dCVoltageControl_UdcSource0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_dCVoltageControl_add_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_dCVoltageControl_add_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_dCVoltageControl_gaindc_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_matchingControl_KMatching" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_matchingControl_Theta0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_matchingControl_UdFilter0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_matchingControl_UdcSource0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_matchingControl_add1_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_matchingControl_add1_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_matchingControl_const_k" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="0"/>
+      <parameter name="control_matchingControl_gain_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_matchingControl_integrator_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="control_matchingControl_integrator_k" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="314.15926535897933"/>
+      <parameter name="control_matchingControl_integrator_use_reset" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="control_matchingControl_integrator_use_set" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="control_matchingControl_integrator_y_start" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="0"/>
+      <parameter name="control_matchingControl_omegaSetPu_k" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_virtualImpedance_IdConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_virtualImpedance_IqConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_virtualImpedance_KpVI" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_virtualImpedance_XRratio" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_virtualImpedance_add1_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_virtualImpedance_add1_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_virtualImpedance_add_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_virtualImpedance_add_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_virtualImpedance_gainKpVI_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_virtualImpedance_gainXRratio_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_virtualImpedance_one_k" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_virtualImpedance_zerosource_k" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="0"/>
+      <parameter name="control_voltageLoop_Cfilter" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_GainCfd_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_GainCfq_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_IdConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_IdPcc0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_IqConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_IqPcc0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_Kiv" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_Kpv" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_UdFilter0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_addd1_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_voltageLoop_addd1_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_voltageLoop_addd2_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_voltageLoop_addd2_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_voltageLoop_addq1_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_voltageLoop_addq1_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_voltageLoop_addq2_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_voltageLoop_addq2_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_voltageLoop_feedbackCwd_k1" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_voltageLoop_feedbackCwd_k2" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="control_voltageLoop_gaind_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_gainq_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_integratord_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="control_voltageLoop_integratord_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_integratord_use_reset" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="control_voltageLoop_integratord_use_set" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="control_voltageLoop_integratord_y_start" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="0"/>
+      <parameter name="control_voltageLoop_integratorq_initType" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="control_voltageLoop_integratorq_k" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="control_voltageLoop_integratorq_use_reset" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="control_voltageLoop_integratorq_use_set" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="control_voltageLoop_integratorq_y_start" valueType="DOUBLE" cardinality="1" readOnly="false" defaultValue="0"/>
+      <parameter name="converter_Cdc" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_Cfilter" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_IdConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_IdPcc0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_IdcSource0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_IqConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_IqPcc0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_Lfilter" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_Ltransformer" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_P0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_Q0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_Rfilter" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_Rtransformer" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_SNom" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_Theta0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_U0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_UPhase0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="converter_UdConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_UdFilter0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_UdPcc0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_UdcSource0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_UqConv0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_UqPcc0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_i0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_i0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_u0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="converter_u0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="IdcSourceRefPu_setPoint_value" valueType="DOUBLE"/>
+      <variable name="UFilterRefPu_setPoint_value" valueType="DOUBLE"/>
+      <variable name="UdcSourceRefPu_setPoint_value" valueType="DOUBLE"/>
+      <variable name="control_IdcSourcePu" valueType="DOUBLE"/>
+      <variable name="control_IdcSourceRefPu" valueType="DOUBLE"/>
+      <variable name="control_UFilterRefPu" valueType="DOUBLE"/>
+      <variable name="control_UdcSourcePu" valueType="DOUBLE"/>
+      <variable name="control_UdcSourceRefOutPu" valueType="DOUBLE"/>
+      <variable name="control_UdcSourceRefPu" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_GainLfd_u" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_GainLfd_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_GainLfq_u" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_GainLfq_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addd1_u1" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addd1_u2" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addd1_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addd2_u1" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addd2_u2" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addd2_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addq1_u1" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addq1_u2" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addq1_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addq2_u1" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addq2_u2" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_addq2_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackLwd_u1" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackLwd_u2" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackLwd_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackLwq_u1" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackLwq_u2" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackLwq_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackd_u1" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackd_u2" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackd_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackq_u1" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackq_u2" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_feedbackq_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_gaind_u" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_gaind_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_gainq_u" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_gainq_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_idConvPu" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_idConvRefPu" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_integratord_local_reset" valueType="BOOL"/>
+      <variable name="control_currentLoop_integratord_local_set" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_integratord_u" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_integratord_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_integratorq_local_reset" valueType="BOOL"/>
+      <variable name="control_currentLoop_integratorq_local_set" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_integratorq_u" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_integratorq_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_iqConvPu" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_iqConvRefPu" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_omegaPu" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_product1_u1" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_product1_u2" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_product1_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_product_u1" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_product_u2" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_product_y" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_udConvRefPu" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_udFilterPu" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_uqConvRefPu" valueType="DOUBLE"/>
+      <variable name="control_currentLoop_uqFilterPu" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_IdcSourcePu" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_IdcSourceRefPu" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_UdcSourcePu" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_UdcSourceRefPu" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_add_u1" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_add_u2" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_add_y" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_feedback_u1" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_feedback_u2" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_feedback_y" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_gaindc_u" valueType="DOUBLE"/>
+      <variable name="control_dCVoltageControl_gaindc_y" valueType="DOUBLE"/>
+      <variable name="control_idConvPu" valueType="DOUBLE"/>
+      <variable name="control_idPccPu" valueType="DOUBLE"/>
+      <variable name="control_iqConvPu" valueType="DOUBLE"/>
+      <variable name="control_iqPccPu" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_DeltaVVId" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_DeltaVVIq" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_UFilterRefPu" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_UdcSourcePu" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_UdcSourceRefPu" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_add1_u1" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_add1_u2" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_add1_y" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_const_y" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback1_u1" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback1_u2" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback1_y" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback2_u1" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback2_u2" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback2_y" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback5_u1" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback5_u2" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback5_y" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback7_u1" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback7_u2" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_feedback7_y" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_gain_u" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_gain_y" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_integrator_local_reset" valueType="BOOL"/>
+      <variable name="control_matchingControl_integrator_local_set" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_integrator_u" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_integrator_y" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_omegaPu" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_omegaRefPu" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_omegaSetPu_y" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_theta" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_udFilterRefPu" valueType="DOUBLE"/>
+      <variable name="control_matchingControl_uqFilterRefPu" valueType="DOUBLE"/>
+      <variable name="control_omegaPu" valueType="DOUBLE"/>
+      <variable name="control_omegaRefPu" valueType="DOUBLE"/>
+      <variable name="control_theta" valueType="DOUBLE"/>
+      <variable name="control_udConvRefPu" valueType="DOUBLE"/>
+      <variable name="control_udFilterPu" valueType="DOUBLE"/>
+      <variable name="control_uqConvRefPu" valueType="DOUBLE"/>
+      <variable name="control_uqFilterPu" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_DeltaVVId" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_DeltaVVIq" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_add1_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_add1_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_add1_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_add_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_add_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_add_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_feedback1_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_feedback1_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_feedback1_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_feedback_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_feedback_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_feedback_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_gainKpVI_u" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_gainKpVI_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_gainXRratio_u" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_gainXRratio_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_idConvPu" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_iqConvPu" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_max_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_max_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_max_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_one_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product1_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product1_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product1_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product2_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product2_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product2_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product3_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product3_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product3_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product4_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product4_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product4_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product5_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product5_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product5_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product_u1" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product_u2" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_product_y" valueType="DOUBLE"/>
+      <variable name="control_virtualImpedance_zerosource_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_GainCfd_u" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_GainCfd_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_GainCfq_u" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_GainCfq_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addd1_u1" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addd1_u2" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addd1_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addd2_u1" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addd2_u2" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addd2_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addq1_u1" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addq1_u2" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addq1_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addq2_u1" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addq2_u2" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_addq2_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackCwd_u1" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackCwd_u2" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackCwd_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackCwq_u1" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackCwq_u2" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackCwq_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackd_u1" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackd_u2" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackd_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackq_u1" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackq_u2" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_feedbackq_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_gaind_u" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_gaind_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_gainq_u" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_gainq_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_idConvRefPu" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_idPccPu" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_integratord_local_reset" valueType="BOOL"/>
+      <variable name="control_voltageLoop_integratord_local_set" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_integratord_u" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_integratord_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_integratorq_local_reset" valueType="BOOL"/>
+      <variable name="control_voltageLoop_integratorq_local_set" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_integratorq_u" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_integratorq_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_iqConvRefPu" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_iqPccPu" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_omegaPu" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_product1_u1" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_product1_u2" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_product1_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_product_u1" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_product_u2" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_product_y" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_udFilterPu" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_udFilterRefPu" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_uqFilterPu" valueType="DOUBLE"/>
+      <variable name="control_voltageLoop_uqFilterRefPu" valueType="DOUBLE"/>
+      <variable name="converter_IConvPu" valueType="DOUBLE"/>
+      <variable name="converter_IdcPu" valueType="DOUBLE"/>
+      <variable name="converter_IdcSourcePu" valueType="DOUBLE"/>
+      <variable name="converter_UdcSourcePu" valueType="DOUBLE"/>
+      <variable name="converter_UdcSourceRefPu" valueType="DOUBLE"/>
+      <variable name="converter_idConvPu" valueType="DOUBLE"/>
+      <variable name="converter_idPccPu" valueType="DOUBLE"/>
+      <variable name="converter_iqConvPu" valueType="DOUBLE"/>
+      <variable name="converter_iqPccPu" valueType="DOUBLE"/>
+      <variable name="converter_omegaPu" valueType="DOUBLE"/>
+      <variable name="converter_terminal_V_im" valueType="DOUBLE"/>
+      <variable name="converter_terminal_V_re" valueType="DOUBLE"/>
+      <variable name="converter_terminal_i_im" valueType="DOUBLE"/>
+      <variable name="converter_terminal_i_re" valueType="DOUBLE"/>
+      <variable name="converter_theta" valueType="DOUBLE"/>
+      <variable name="converter_udConvPu" valueType="DOUBLE"/>
+      <variable name="converter_udConvRefPu" valueType="DOUBLE"/>
+      <variable name="converter_udFilterPu" valueType="DOUBLE"/>
+      <variable name="converter_udPccPu" valueType="DOUBLE"/>
+      <variable name="converter_uqConvPu" valueType="DOUBLE"/>
+      <variable name="converter_uqConvRefPu" valueType="DOUBLE"/>
+      <variable name="converter_uqFilterPu" valueType="DOUBLE"/>
+      <variable name="converter_uqPccPu" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

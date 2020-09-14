@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<external_variables xmlns="http://www.rte-france.com/dynawo">
+  <variable id="load.PRefPu.value" type="discrete"/>
+  <variable id="load.QRefPu.value" type="discrete"/>
+  <variable id="load.switchOffSignal1.value" type="discrete" defaultValue="false"/>
+  <variable id="load.switchOffSignal2.value" type="discrete" defaultValue="false"/>
+  <variable id="load.terminal.V.im" type="continuous"/>
+  <variable id="load.terminal.V.re" type="continuous"/>
+</external_variables>

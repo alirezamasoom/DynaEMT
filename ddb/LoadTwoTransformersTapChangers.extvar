@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<external_variables xmlns="http://www.rte-france.com/dynawo">
+  <variable id="load.PRefPu.value" type="discrete"/>
+  <variable id="load.QRefPu.value" type="discrete"/>
+  <variable id="tapChangerD.locked" type="discrete" defaultValue="false"/>
+  <variable id="tapChangerD.switchOffSignal2.value" type="discrete" defaultValue="false"/>
+  <variable id="tapChangerT.locked" type="discrete" defaultValue="false"/>
+  <variable id="tapChangerT.switchOffSignal1.value" type="discrete" defaultValue="false"/>
+  <variable id="transformerT.terminal1.V.im" type="continuous"/>
+  <variable id="transformerT.terminal1.V.re" type="continuous"/>
+</external_variables>

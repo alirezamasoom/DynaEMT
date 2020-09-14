@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>Line</name>
+  <elements>
+    <parameters>
+      <parameter name="line_BPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="line_GPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="line_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="line_RPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="line_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="line_XPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="line_YPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="line_YPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="line_ZPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="line_ZPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="line_running_value" valueType="BOOL"/>
+      <variable name="line_state" valueType="INT"/>
+      <variable name="line_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="line_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="line_terminal1_V_im" valueType="DOUBLE"/>
+      <variable name="line_terminal1_V_re" valueType="DOUBLE"/>
+      <variable name="line_terminal1_i_im" valueType="DOUBLE"/>
+      <variable name="line_terminal1_i_re" valueType="DOUBLE"/>
+      <variable name="line_terminal2_V_im" valueType="DOUBLE"/>
+      <variable name="line_terminal2_V_re" valueType="DOUBLE"/>
+      <variable name="line_terminal2_i_im" valueType="DOUBLE"/>
+      <variable name="line_terminal2_i_re" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

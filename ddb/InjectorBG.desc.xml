@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>InjectorBG</name>
+  <elements>
+    <parameters>
+      <parameter name="injector_B0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="injector_G0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="injector_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="3"/>
+      <parameter name="injector_P0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="injector_Q0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="injector_SNom" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="injector_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="injector_U0Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="injector_UPhase0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="injector_i0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="injector_i0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="injector_s0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="injector_s0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="injector_u0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="injector_u0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="injector_BPu" valueType="DOUBLE"/>
+      <variable name="injector_BPuSnRef" valueType="DOUBLE"/>
+      <variable name="injector_GPu" valueType="DOUBLE"/>
+      <variable name="injector_GPuSnRef" valueType="DOUBLE"/>
+      <variable name="injector_PInjPu" valueType="DOUBLE"/>
+      <variable name="injector_QInjPu" valueType="DOUBLE"/>
+      <variable name="injector_UPu" valueType="DOUBLE"/>
+      <variable name="injector_YPuSnRef_im" valueType="DOUBLE"/>
+      <variable name="injector_YPuSnRef_re" valueType="DOUBLE"/>
+      <variable name="injector_running_value" valueType="BOOL"/>
+      <variable name="injector_state" valueType="INT"/>
+      <variable name="injector_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="injector_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="injector_switchOffSignal3_value" valueType="BOOL"/>
+      <variable name="injector_terminal_V_im" valueType="DOUBLE"/>
+      <variable name="injector_terminal_V_re" valueType="DOUBLE"/>
+      <variable name="injector_terminal_i_im" valueType="DOUBLE"/>
+      <variable name="injector_terminal_i_re" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

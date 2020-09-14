@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<external_variables xmlns="http://www.rte-france.com/dynawo">
+  <variable id="tapChanger.UMonitored.value" type="continuous"/>
+  <variable id="tapChanger.locked" type="discrete" defaultValue="false"/>
+  <variable id="tapChanger.switchOffSignal1.value" type="discrete" defaultValue="false"/>
+  <variable id="tapChanger.switchOffSignal2.value" type="discrete" defaultValue="false"/>
+</external_variables>

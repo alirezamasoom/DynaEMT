@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>EventSetPointBoolean</name>
+  <elements>
+    <parameters>
+      <parameter name="event_nbEventVariables" valueType="INT" cardinality="1" readOnly="false" defaultValue="1"/>
+      <parameter name="event_stateEvent1" valueType="BOOL" cardinality="1" readOnly="false"/>
+      <parameter name="event_tEvent" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="event_state1_value" valueType="BOOL"/>
+    </variables>
+  </elements>
+</model>

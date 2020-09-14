@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>CurrentLimitAutomaton</name>
+  <elements>
+    <parameters>
+      <parameter name="currentLimitAutomaton_IMax" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="currentLimitAutomaton_OrderToEmit" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="currentLimitAutomaton_Running" valueType="BOOL" cardinality="1" readOnly="false"/>
+      <parameter name="currentLimitAutomaton_tLagBeforeActing" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="currentLimitAutomaton_AutomatonExists_value" valueType="BOOL"/>
+      <variable name="currentLimitAutomaton_IMonitored_value" valueType="DOUBLE"/>
+      <variable name="currentLimitAutomaton_order_value" valueType="DOUBLE"/>
+      <variable name="currentLimitAutomaton_tOrder" valueType="DOUBLE"/>
+      <variable name="currentLimitAutomaton_tThresholdReached" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

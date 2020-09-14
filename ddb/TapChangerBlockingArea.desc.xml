@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>TapChangerBlockingArea</name>
+  <elements>
+    <parameters>
+      <parameter name="tapChangerLock_UMin" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChangerLock_locked0" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="false"/>
+      <parameter name="tapChangerLock_tLagBeforeLocked" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChangerLock_tLagTransLockedD" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChangerLock_tLagTransLockedT" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="tapChangerLock_UMonitored_value" valueType="DOUBLE"/>
+      <variable name="tapChangerLock_UUnderMin" valueType="BOOL"/>
+      <variable name="tapChangerLock_lockOrder_value" valueType="BOOL"/>
+      <variable name="tapChangerLock_locked" valueType="BOOL"/>
+      <variable name="tapChangerLock_lockedD" valueType="BOOL"/>
+      <variable name="tapChangerLock_lockedT" valueType="BOOL"/>
+      <variable name="tapChangerLock_tLocked" valueType="DOUBLE"/>
+      <variable name="tapChangerLock_tUnderUmin" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

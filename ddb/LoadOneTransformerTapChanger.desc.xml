@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>LoadOneTransformerTapChanger</name>
+  <elements>
+    <parameters>
+      <parameter name="load_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="load_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="load_alpha" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_beta" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_i0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_i0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_s0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_s0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_u0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_u0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="tapChanger_U0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_UDeadBand" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_UTarget" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_deadBand" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_decreaseTapToDecreaseValue" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_decreaseTapToIncreaseValue" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_increaseTapToDecreaseValue" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_increaseTapToIncreaseValue" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="tapChanger_locked0" valueType="BOOL" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_regulating0" valueType="BOOL" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_running0" valueType="BOOL" cardinality="1" readOnly="false" defaultValue="true"/>
+      <parameter name="tapChanger_state0" valueType="INT" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_t1st" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_tNext" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_tap0" valueType="INT" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_tapMax" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_tapMin" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="tapChanger_targetValue" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_valueMax" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_valueMin" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="tapChanger_valueToMonitor0" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_B" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_G" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="transformer_NbTap" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_P10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_Q10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_R" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_SNom" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="transformer_Tap0" valueType="INT" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_U10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_U1Phase0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_U20Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_Uc20Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_X" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_YPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_YPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_ZPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_ZPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_i10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_i10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_i20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_i20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_rTfo0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_rTfoMaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_rTfoMinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformer_u10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_u10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_u20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformer_u20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="load_PPu" valueType="DOUBLE"/>
+      <variable name="load_PRefPu_value" valueType="DOUBLE"/>
+      <variable name="load_QPu" valueType="DOUBLE"/>
+      <variable name="load_QRefPu_value" valueType="DOUBLE"/>
+      <variable name="load_SPu_im" valueType="DOUBLE"/>
+      <variable name="load_SPu_re" valueType="DOUBLE"/>
+      <variable name="load_UPu_value" valueType="DOUBLE"/>
+      <variable name="load_running_value" valueType="BOOL"/>
+      <variable name="load_state" valueType="INT"/>
+      <variable name="load_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="load_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="load_terminal_V_im" valueType="DOUBLE"/>
+      <variable name="load_terminal_V_re" valueType="DOUBLE"/>
+      <variable name="load_terminal_i_im" valueType="DOUBLE"/>
+      <variable name="load_terminal_i_re" valueType="DOUBLE"/>
+      <variable name="tapChanger_AutomatonExists_value" valueType="BOOL"/>
+      <variable name="tapChanger_UMonitored_value" valueType="DOUBLE"/>
+      <variable name="tapChanger_locked" valueType="BOOL"/>
+      <variable name="tapChanger_lookingToDecreaseTap" valueType="BOOL"/>
+      <variable name="tapChanger_lookingToIncreaseTap" valueType="BOOL"/>
+      <variable name="tapChanger_running_value" valueType="BOOL"/>
+      <variable name="tapChanger_state" valueType="INT"/>
+      <variable name="tapChanger_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="tapChanger_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="tapChanger_tTapDown" valueType="DOUBLE"/>
+      <variable name="tapChanger_tTapUp" valueType="DOUBLE"/>
+      <variable name="tapChanger_tValueAboveMaxWhileRunning" valueType="DOUBLE"/>
+      <variable name="tapChanger_tValueUnderMinWhileRunning" valueType="DOUBLE"/>
+      <variable name="tapChanger_tap_value" valueType="DOUBLE"/>
+      <variable name="tapChanger_valueAboveMax" valueType="BOOL"/>
+      <variable name="tapChanger_valueToMonitor_value" valueType="DOUBLE"/>
+      <variable name="tapChanger_valueUnderMin" valueType="BOOL"/>
+      <variable name="transformer_P1Pu_value" valueType="DOUBLE"/>
+      <variable name="transformer_Q1Pu_value" valueType="DOUBLE"/>
+      <variable name="transformer_U1Pu_value" valueType="DOUBLE"/>
+      <variable name="transformer_U2Pu_value" valueType="DOUBLE"/>
+      <variable name="transformer_rTfoPu" valueType="DOUBLE"/>
+      <variable name="transformer_running_value" valueType="BOOL"/>
+      <variable name="transformer_state" valueType="INT"/>
+      <variable name="transformer_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="transformer_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="transformer_tap_value" valueType="DOUBLE"/>
+      <variable name="transformer_terminal1_V_im" valueType="DOUBLE"/>
+      <variable name="transformer_terminal1_V_re" valueType="DOUBLE"/>
+      <variable name="transformer_terminal1_i_im" valueType="DOUBLE"/>
+      <variable name="transformer_terminal1_i_re" valueType="DOUBLE"/>
+      <variable name="transformer_terminal2_V_im" valueType="DOUBLE"/>
+      <variable name="transformer_terminal2_V_re" valueType="DOUBLE"/>
+      <variable name="transformer_terminal2_i_im" valueType="DOUBLE"/>
+      <variable name="transformer_terminal2_i_re" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

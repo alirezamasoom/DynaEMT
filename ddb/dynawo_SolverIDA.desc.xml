@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<solver xmlns="http://www.rte-france.com/dynawo">
+  <name>IDASolver</name>
+  <elements>
+    <parameters>
+      <parameter name="absAccuracy" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="enableSilentZ" valueType="BOOL" cardinality="1"/>
+      <parameter name="fnormtolAlg" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="fnormtolAlgJ" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="initialaddtolAlg" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="initialaddtolAlgJ" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="initStep" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="maxStep" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="minStep" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="msbsetAlg" valueType="INT" cardinality="1"/>
+      <parameter name="msbsetAlgJ" valueType="INT" cardinality="1"/>
+      <parameter name="mxiterAlg" valueType="INT" cardinality="1"/>
+      <parameter name="mxiterAlgJ" valueType="INT" cardinality="1"/>
+      <parameter name="mxnewtstepAlg" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="mxnewtstepAlgJ" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="optimizeReinitAlgebraicResidualsEvaluations" valueType="BOOL" cardinality="1"/>
+      <parameter name="order" valueType="INT" cardinality="1"/>
+      <parameter name="printflAlg" valueType="INT" cardinality="1"/>
+      <parameter name="printflAlgJ" valueType="INT" cardinality="1"/>
+      <parameter name="relAccuracy" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="scsteptolAlg" valueType="DOUBLE" cardinality="1"/>
+      <parameter name="scsteptolAlgJ" valueType="DOUBLE" cardinality="1"/>
+    </parameters>
+  </elements>
+</solver>

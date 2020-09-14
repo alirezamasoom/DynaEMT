@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>EventSetPointDoubleReal</name>
+  <elements>
+    <parameters>
+      <parameter name="event_nbEventVariables" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="event_stateEvent1" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="event_stateEvent2" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="event_tEvent" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+    </parameters>
+    <variables>
+      <variable name="event_state1_value" valueType="DOUBLE"/>
+      <variable name="event_state2_value" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>

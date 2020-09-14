@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<external_variables xmlns="http://www.rte-france.com/dynawo">
+  <variable id="hvdc.P1RefPu" type="continuous"/>
+  <variable id="hvdc.switchOffSignal1.value" type="discrete" defaultValue="false"/>
+  <variable id="hvdc.switchOffSignal2.value" type="discrete" defaultValue="false"/>
+  <variable id="hvdc.tanPhi1Ref.value" type="discrete"/>
+  <variable id="hvdc.tanPhi2Ref.value" type="discrete"/>
+  <variable id="hvdc.terminal1.V.im" type="continuous"/>
+  <variable id="hvdc.terminal1.V.re" type="continuous"/>
+  <variable id="hvdc.terminal2.V.im" type="continuous"/>
+  <variable id="hvdc.terminal2.V.re" type="continuous"/>
+</external_variables>

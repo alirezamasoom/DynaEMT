@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<model xmlns="http://www.rte-france.com/dynawo">
+  <name>LoadTwoTransformers</name>
+  <elements>
+    <parameters>
+      <parameter name="load_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="load_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="load_alpha" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_beta" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="load_i0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_i0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_s0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_s0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_u0Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="load_u0Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_B" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerD_G" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerD_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="transformerD_NbTap" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="transformerD_P10Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_Q10Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_R" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerD_SNom" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerD_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="transformerD_Tap0" valueType="INT" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_U10Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_U20Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_Uc20Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerD_X" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerD_YPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_YPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_ZPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_ZPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_i10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_i10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_i20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_i20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_rTfo0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_rTfoMaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerD_rTfoMinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerD_u10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_u10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_u20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerD_u20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_B" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_G" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_NbSwitchOffSignals" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="transformerT_NbTap" valueType="INT" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_P10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_Q10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_R" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_SNom" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_State0" valueType="INT" cardinality="1" readOnly="false" defaultValue="2"/>
+      <parameter name="transformerT_Tap0" valueType="INT" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_U10Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_U1Phase0" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_U20Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_Uc20Pu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_X" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_YPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_YPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_ZPu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_ZPu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_i10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_i10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_i20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_i20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_rTfo0Pu" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_rTfoMaxPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_rTfoMinPu" valueType="DOUBLE" cardinality="1" readOnly="false"/>
+      <parameter name="transformerT_u10Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_u10Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_u20Pu_im" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+      <parameter name="transformerT_u20Pu_re" valueType="DOUBLE" cardinality="1" readOnly="true"/>
+    </parameters>
+    <variables>
+      <variable name="load_PPu" valueType="DOUBLE"/>
+      <variable name="load_PRefPu_value" valueType="DOUBLE"/>
+      <variable name="load_QPu" valueType="DOUBLE"/>
+      <variable name="load_QRefPu_value" valueType="DOUBLE"/>
+      <variable name="load_SPu_im" valueType="DOUBLE"/>
+      <variable name="load_SPu_re" valueType="DOUBLE"/>
+      <variable name="load_UPu_value" valueType="DOUBLE"/>
+      <variable name="load_running_value" valueType="BOOL"/>
+      <variable name="load_state" valueType="INT"/>
+      <variable name="load_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="load_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="load_terminal_V_im" valueType="DOUBLE"/>
+      <variable name="load_terminal_V_re" valueType="DOUBLE"/>
+      <variable name="load_terminal_i_im" valueType="DOUBLE"/>
+      <variable name="load_terminal_i_re" valueType="DOUBLE"/>
+      <variable name="transformerD_P1Pu_value" valueType="DOUBLE"/>
+      <variable name="transformerD_Q1Pu_value" valueType="DOUBLE"/>
+      <variable name="transformerD_U1Pu_value" valueType="DOUBLE"/>
+      <variable name="transformerD_U2Pu_value" valueType="DOUBLE"/>
+      <variable name="transformerD_rTfoPu" valueType="DOUBLE"/>
+      <variable name="transformerD_running_value" valueType="BOOL"/>
+      <variable name="transformerD_state" valueType="INT"/>
+      <variable name="transformerD_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="transformerD_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="transformerD_tap_value" valueType="DOUBLE"/>
+      <variable name="transformerD_terminal1_V_im" valueType="DOUBLE"/>
+      <variable name="transformerD_terminal1_V_re" valueType="DOUBLE"/>
+      <variable name="transformerD_terminal1_i_im" valueType="DOUBLE"/>
+      <variable name="transformerD_terminal1_i_re" valueType="DOUBLE"/>
+      <variable name="transformerD_terminal2_V_im" valueType="DOUBLE"/>
+      <variable name="transformerD_terminal2_V_re" valueType="DOUBLE"/>
+      <variable name="transformerD_terminal2_i_im" valueType="DOUBLE"/>
+      <variable name="transformerD_terminal2_i_re" valueType="DOUBLE"/>
+      <variable name="transformerT_P1Pu_value" valueType="DOUBLE"/>
+      <variable name="transformerT_Q1Pu_value" valueType="DOUBLE"/>
+      <variable name="transformerT_U1Pu_value" valueType="DOUBLE"/>
+      <variable name="transformerT_U2Pu_value" valueType="DOUBLE"/>
+      <variable name="transformerT_rTfoPu" valueType="DOUBLE"/>
+      <variable name="transformerT_running_value" valueType="BOOL"/>
+      <variable name="transformerT_state" valueType="INT"/>
+      <variable name="transformerT_switchOffSignal1_value" valueType="BOOL"/>
+      <variable name="transformerT_switchOffSignal2_value" valueType="BOOL"/>
+      <variable name="transformerT_tap_value" valueType="DOUBLE"/>
+      <variable name="transformerT_terminal1_V_im" valueType="DOUBLE"/>
+      <variable name="transformerT_terminal1_V_re" valueType="DOUBLE"/>
+      <variable name="transformerT_terminal1_i_im" valueType="DOUBLE"/>
+      <variable name="transformerT_terminal1_i_re" valueType="DOUBLE"/>
+      <variable name="transformerT_terminal2_V_im" valueType="DOUBLE"/>
+      <variable name="transformerT_terminal2_V_re" valueType="DOUBLE"/>
+      <variable name="transformerT_terminal2_i_im" valueType="DOUBLE"/>
+      <variable name="transformerT_terminal2_i_re" valueType="DOUBLE"/>
+    </variables>
+  </elements>
+</model>
